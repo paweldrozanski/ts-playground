@@ -7,4 +7,10 @@ function printResult(num: number): void {
 }
 
 printResult(add(5, 12)); // returns void
-console.log(printResult(add(5, 12))); // returns undefined
+
+let combinedValues: (a: number, b: number) => number;
+
+combinedValues = add;
+// combinedValues = printResult; // error due to wrong function type
+
+console.log(combinedValues(8, 8));
