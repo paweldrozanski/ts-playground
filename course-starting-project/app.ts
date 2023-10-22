@@ -30,3 +30,6 @@ console.log(combinedStringAges);
 
 const combinedNames = combine("Max", "Anna", "as-text");
 console.log(combinedNames);
+
+type User = { name: string; age: number };
+const u1: User = { name: "Paul", age: 37 };
