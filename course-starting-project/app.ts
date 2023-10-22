@@ -1,14 +1,21 @@
 const birthYear = 1986;
 const currentYear = new Date().getFullYear();
 
-const person = {
+const person: {
+  name: string;
+  hobbies: string[];
+  age: number;
+  role: [number, string];
+} = {
   name: "Paul",
   age: currentYear - birthYear,
   hobbies: ["Cooking", "Biking", "Photography"],
+  role: [2, "author"],
 };
 
-let favoriteActivities: string[];
-favoriteActivities = ["Sports"];
+// person.role[1] = 10; // Cannot change elements in tuple
+// person.role.push("admin"); // But we can push elements to tuple
+// person.role = [1, 'author', 12]; // although we cannot assign extended arrays, lol
 
 console.log(person.name);
 
