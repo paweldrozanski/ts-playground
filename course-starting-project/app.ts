@@ -1,19 +1,18 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  const result = n1 + n2;
-  if (showResult) {
-    console.log(phrase + result);
-  } else {
-    return result;
-  }
+const birthYear = 1986;
+const currentYear = new Date().getFullYear();
+
+const person = {
+  name: "Paul",
+  age: currentYear - birthYear,
+  hobbies: ["Cooking", "Biking", "Photography"],
+};
+
+let favoriteActivities: string[];
+favoriteActivities = ["Sports"];
+
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+  // console.log(hobby.map()); // Error because hobby is interfered as string not array
 }
-
-// const number1 = "5"; // causes an error due to incorrect type
-let number1: number;
-number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-let resultPhrase = "Result is: ";
-// resultPhrase = 5;
-
-const result = add(number1, number2, printResult, resultPhrase);
-console.log(result);
