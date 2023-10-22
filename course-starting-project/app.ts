@@ -34,6 +34,9 @@ const person = {
 // person.role.push("admin"); // But we can push elements to tuple
 // person.role = [1, 'author', 12]; // although we cannot assign extended arrays, lol
 
+// let favoriteActivities: any[];
+// favoriteActivities = ["Sports", 1]; // no error, but shitty typy
+
 console.log(person.name);
 
 for (const hobby of person.hobbies) {
