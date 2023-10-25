@@ -16,7 +16,7 @@ age = 37;
 // }
 // console.log(isOld);
 
-const add = (a: number, b: number = 1) => a + b;
+// const add = (a: number, b: number = 1) => a + b;
 
 const printOutput: (a: number | string) => void = (output) =>
   console.log(output);
@@ -27,8 +27,8 @@ if (button) {
   button.addEventListener("click", (event) => console.log(event));
 }
 
-printOutput(add(5));
-printOutput(add(5, 10));
+// printOutput(add(5));
+// printOutput(add(5, 10));
 
 const hobbies = ["Sports", "Cooking"];
 const activeHobbies = ["Hiking", ...hobbies];
@@ -44,3 +44,20 @@ const person = {
 
 // copy of the object (below), instead of copy of the pointer (above)
 const copiedPerson = { ...person };
+
+const add = (...numbers: number[]) => {
+  return numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+};
+
+const addedNumbers = add(5, 10, 2, 3.7);
+console.log(addedNumbers);
+
+const sumNumOrString = (...elements: (number | string)[]) => {
+  return elements.reduce((cur, next) => {
+    return +cur + +next;
+  }, 0);
+};
+
+console.log(sumNumOrString(1, "2", 3, 4, 5, 6, "7", "8", "9", 10));
