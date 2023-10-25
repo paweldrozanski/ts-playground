@@ -1,8 +1,5 @@
 const userName = "Paul";
 
-let age = 30;
-age = 37;
-
 // let result;
 // function add(a: number, b: number) {
 //   result = a + b;
@@ -36,7 +33,7 @@ const activeHobbies = ["Hiking", ...hobbies];
 console.log(activeHobbies);
 
 const person = {
-  name: "Paul",
+  firstName: "Paul",
   age: 37,
 };
 
@@ -61,3 +58,9 @@ const sumNumOrString = (...elements: (number | string)[]) => {
 };
 
 console.log(sumNumOrString(1, "2", 3, 4, 5, 6, "7", "8", "9", 10));
+
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+console.log(hobby1, hobby2);
+
+const { age, firstName: theName } = person;
+console.log(theName, age);
