@@ -29,3 +29,18 @@ if (button) {
 
 printOutput(add(5));
 printOutput(add(5, 10));
+
+const hobbies = ["Sports", "Cooking"];
+const activeHobbies = ["Hiking", ...hobbies];
+
+console.log(activeHobbies);
+
+const person = {
+  name: "Paul",
+  age: 37,
+};
+
+// const copiedPerson = person;
+
+// copy of the object (below), instead of copy of the pointer (above)
+const copiedPerson = { ...person };
