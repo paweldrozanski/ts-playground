@@ -1,15 +1,13 @@
-interface Greetable {
+interface Named {
   readonly name: string;
-  age: number;
-
+}
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
 class Person implements Greetable {
-  constructor(
-    public name: string,
-    public age: number,
-  ) {}
+  age = 30;
+  constructor(public name: string) {}
 
   greet(phrase: string) {
     console.log(phrase + " " + this.name + "!!!!!");
@@ -17,7 +15,7 @@ class Person implements Greetable {
 }
 
 let user1: Greetable;
-user1 = new Person("Paul", 37);
+user1 = new Person("Paul");
 
 // user1.name = 'John'; // impossible due to readonly 'name'
 
