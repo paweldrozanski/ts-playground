@@ -81,3 +81,26 @@ const numberStorage = new DataStorage<number>();
 numberStorage.addItem(1);
 numberStorage.addItem(10);
 console.log(numberStorage);
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date,
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ["Paul", "Ewelina"];
+// cannot add because it's readonly
+// names.push("Adam");
