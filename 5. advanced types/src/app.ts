@@ -39,20 +39,19 @@ function add(a: Combinable, b: Combinable) {
 const result = add("Paul ", "Drozanski");
 result.split(" ");
 
-const fetchedUserData1 = {
+const fetchedUserData = {
   id: "u1",
   name: "Paul",
   job: { title: "CEO", description: "My own company" },
 };
-const fetchedUserData2 = {
-  id: "u2",
-  name: "Paul",
-};
 
-[fetchedUserData1, fetchedUserData2].map((user) => {
-  console.log(user?.job?.title);
-});
-// console.log(fetchedUserData?.job?.title);
+console.log(fetchedUserData?.job?.title);
+
+const userInput = undefined;
+
+const storedData = userInput ?? "DEFAULT";
+
+console.log(storedData);
 
 // type UnknownEmployee = Employee | Admin;
 
