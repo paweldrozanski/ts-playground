@@ -23,3 +23,22 @@ const mergedObj = merge(
 );
 
 console.log(mergedObj);
+
+interface Lenghty {
+  length: number;
+}
+
+function countAndDescribe<T extends Lenghty>(element: T): [T, string] {
+  let descriptionText = "Got no value.";
+  if (element.length === 1) {
+    descriptionText = "Got " + element.length + " element.";
+  } else if (element.length > 1) {
+    descriptionText = "Got " + element.length + " elements.";
+  }
+  return [element, descriptionText];
+}
+
+console.log(countAndDescribe("Hi there!"));
+console.log(countAndDescribe(["Cooking", "Fathering"]));
+console.log(countAndDescribe([]));
+// console.log(countAndDescribe(10)); // ain't gonna work, because 10 has no length property
