@@ -42,3 +42,12 @@ console.log(countAndDescribe("Hi there!"));
 console.log(countAndDescribe(["Cooking", "Fathering"]));
 console.log(countAndDescribe([]));
 // console.log(countAndDescribe(10)); // ain't gonna work, because 10 has no length property
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U,
+) {
+  return "Value: " + obj[key];
+}
+
+console.log(extractAndConvert({ name: "Paul" }, "name"));
