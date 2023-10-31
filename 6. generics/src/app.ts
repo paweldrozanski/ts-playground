@@ -12,13 +12,14 @@
 // });
 
 // Generics function
-function merge<T, U>(objA: T, objB: U) {
+function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign({}, objA, objB);
 }
 
 const mergedObj = merge(
   { name: "Paul", hobbies: ["Cooking", "Fathering"] },
-  { age: 37 },
+  // 30, // won't pass because type T is constrained
+  { age: 30 },
 );
 
 console.log(mergedObj);
