@@ -128,7 +128,7 @@ class ProjectList {
   element: HTMLElement;
   assignedProjects: Project[];
 
-  constructor(private type: ProjectStatus) {
+  constructor(private type: "active" | "finished") {
     this.templateElement = document.getElementById(
       "project-list",
     ) as HTMLTemplateElement;
@@ -270,5 +270,5 @@ class ProjectInput {
 }
 
 const prjInput = new ProjectInput();
-const activePrjList = new ProjectList(ProjectStatus.Active);
-const finishedPrjList = new ProjectList(ProjectStatus.Finished);
+const activePrjList = new ProjectList("active");
+const finishedPrjList = new ProjectList("finished");
