@@ -1,8 +1,10 @@
 // Project Type
+
 enum ProjectStatus {
   Active,
   Finished,
 }
+
 class Project {
   constructor(
     public id: string,
@@ -56,8 +58,6 @@ class ProjectState extends State<Project> {
     }
   }
 }
-
-const projectState = ProjectState.getInstance();
 
 // Validation
 interface Validatable {
@@ -290,6 +290,8 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     }
   }
 }
+
+const projectState = ProjectState.getInstance();
 
 const prjInput = new ProjectInput();
 const activePrjList = new ProjectList("active");
